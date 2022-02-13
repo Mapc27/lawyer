@@ -3,7 +3,6 @@ from django.core.validators import RegexValidator
 
 
 class BaseModel(models.Model):
-    id = models.IntegerField(primary_key=True)
     created_at = models.DateTimeField(auto_now_add=True, verbose_name="Дата создания")
     updated_at = models.DateTimeField(auto_now=True, verbose_name="Дата изменения")
 
@@ -18,6 +17,9 @@ class Application(BaseModel):
     phone_number = models.CharField(validators=[phone_validator], max_length=16)
     person_name = models.CharField(max_length=100)
     description = models.TextField()
+
+    class Meta:
+        unique_together = [('phone_number', 'person_name', 'description')]
 
 
 class SolvedApplication(BaseModel):

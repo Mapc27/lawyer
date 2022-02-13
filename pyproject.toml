@@ -11,6 +11,7 @@ python-dotenv = "^0.19.2"
 django-cors-headers = "^3.11.0"
 psycopg2-binary = "^2.9.3"
 whitenoise = "^6.0.0"
+djangorestframework = "^3.13.1"
 
 [tool.poetry.dev-dependencies]
 
