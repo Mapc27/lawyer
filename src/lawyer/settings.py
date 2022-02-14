@@ -31,7 +31,7 @@ SECRET_KEY = 'django-insecure-ki48u#)37=q%v%6pttd=+uja5fd9$nw41-3%$#w9!k=k&+yeg)
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['*']
 
 
 # Application definition
@@ -60,7 +60,6 @@ MIDDLEWARE = [
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
     "corsheaders.middleware.CorsMiddleware",
     "django.middleware.common.CommonMiddleware",
-    "whitenoise.middleware.WhiteNoiseMiddleware",
 ]
 
 ROOT_URLCONF = 'lawyer.urls'
@@ -134,7 +133,7 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/4.0/howto/static-files/
 
 STATIC_URL = 'static/'
-STATIC_ROOT = "static"
+STATIC_ROOT = BASE_DIR / "web/static/"
 
 MEDIA_URL = "media/"
 MEDIA_ROOT = BASE_DIR / "web/static/web/media"
@@ -180,3 +179,5 @@ CELERY_BEAT_SCHEDULE = {
         "args": (),
     },
 }
+
+CSRF_TRUSTED_ORIGINS = ['http://localhost', 'https://0.0.0.0', 'https://localhost', 'http://0.0.0.0']

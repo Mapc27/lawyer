@@ -1,6 +1,29 @@
 version: '3'
 
 services:
+  nginx:
+    image: lawyer-nginx:latest
+    ports:
+      - 80:80
+    build:
+      context: .
+      dockerfile: deploy/nginx/Dockerfile
+    depends_on:
+      - app
+    restart: always
+  app:
+    image: lawyer-python:latest
+    build:
+      context: .
+      dockerfile: deploy/python/Dockerfile
+    depends_on:
+      - db
+      - redis
+    environment:
+      DB_HOST: db
+      CELERY_BROKER_URL: redis://redis:6379/0
+    restart: always
+
   db:
     image: postgres:11.1-alpine
     ports:
@@ -9,14 +32,14 @@ services:
       POSTGRES_DB: lawyer
       POSTGRES_USER: lawyer
       POSTGRES_PASSWORD: lawyer
-      POSTGRES_NAME: lawyer
     volumes:
       - db:/var/lib/postgresql/data
+    restart: always
 
   redis:
     image: redis:6-alpine
-    ports:
-      - 6379:6379
+    restart: always
+
 
 volumes:
   db:
