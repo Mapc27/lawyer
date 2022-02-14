@@ -21,7 +21,6 @@
 			<div class="result">
 				{{message}}
 			</div>
-			{{phone_number}}
 		</div>
 	</div>
 </template>
@@ -68,7 +67,7 @@ export default {
 		},
 		send_application(){
 			if (!this.check_input_data()) return
-			fetch( `http://127.0.0.1:8000/api/applications/`,
+			fetch( `/api/applications/`,
 					{
 						method: 'POST',
 						headers: {"Content-Type": "application/json"},

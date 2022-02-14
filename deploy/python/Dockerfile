@@ -1,17 +1,3 @@
-FROM node:16-alpine AS node
-
-WORKDIR /app
-
-COPY src/web/static/vue/package.json .
-COPY src/web/static/vue/package-lock.json .
-
-RUN npm ci
-
-COPY src/web/static/vue .
-
-RUN npm run build
-
-
 FROM python:3.8
 
 ENV PYTHONUNBUFFERED 1
@@ -25,8 +11,7 @@ RUN poetry install --no-dev
 
 COPY . .
 
-COPY --from=node /app/dist /src/static/dist
-#RUN python src/manage.py collectstatic --no-input
+RUN python src/manage.py collectstatic --no-input
 
 EXPOSE 8000
 
