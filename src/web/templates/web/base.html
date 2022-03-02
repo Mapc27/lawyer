@@ -4,10 +4,9 @@
 <head>
   <meta charset="UTF-8">
   <title>{% block title %} {% endblock %}</title>
+  {% block links %}  {% endblock %}
   <link rel="stylesheet" href="{% static 'dist/css/chunk-vendors.css' %}">
   <link rel="stylesheet" href="{% static 'dist/css/app.css' %}">
-  {% block links %}
-  {% endblock %}
 </head>
 <body>
 {% block body %} {% endblock %}
