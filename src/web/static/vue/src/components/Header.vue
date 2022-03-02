@@ -51,7 +51,7 @@
 									<textarea class="form-input" v-model="description" name="description" placeholder="С какой проблемой столкнулись?" rows="3"></textarea>
 								</div>
 								<div class="submiter">
-									<button v-on:click="send_application">
+									<button class="submiter-button" v-on:click="send_application">
 										<span>Оставить заявку</span>
 									</button>
 								</div>
@@ -131,27 +131,52 @@ export default {
   margin: 0 auto;
   padding: 0 50px;
 }
-.top{
-	padding: 30px 0;
-}
 .sliders{
   display: flex;
   justify-content: space-between;
   align-items: flex-start;
 }
+.top{
+	padding: 30px 0;
+	min-height: 88px;
+	align-items: center;
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+}
+.slogan{
+	font-size: 18px;
+	font-weight: 400;
+}
 .center{
 	padding: 30px 0;
   align-content: center;
+	margin: auto;
+}
+
+.text-part{
+	font-family: 'Noto Sans KR', sans-serif;
+	font-weight: normal;
+	padding: 70px 0 0;
+}
+.text-part p{
+	font-size: 20px;
+}
+.text-part li{
+	font-size: 20px;
+}
+.text-part h1{
+	line-height: normal;
+	font: inherit;
+	font-size: 35px;
 }
 .form{
   margin: 0 0 0 20px;
-	padding: 30px;
+	padding: 50px 40px;
 
-  max-width: 360px;
-  width: 100%;
+  width: 280px;
   background-color: #ffffff;
 
-  font-family: 'Roboto', arial, sans-serif;
   font-size: 16px;
   color: #3D3D3D;
 
@@ -171,7 +196,7 @@ export default {
   padding: 10px 0;
   width: 100%;
   position: relative;
-
+	max-width: 280px;
 }
 .label{
   margin: 0 0 10px;
@@ -179,8 +204,23 @@ export default {
 
 .form-input{
   border: 1px solid #FFCD02;
-  padding: 18px 20px;
-  margin: 0;
+	border-radius: 8px;
+	width: 240px;
+	padding: 18px 20px;
+}
+
+.submiter-button{
+	padding: 21px;
+	border-radius: 8px;
+	width: 100%;
+	text-align: center;
+	cursor: pointer;
+	overflow: visible;
+	margin: 0;
+	max-height: 9001em;
+	background: #FFCD02;
+	border: none;
+	color: #3A3A3A;
 }
 
 @media screen and (max-width: 1480px) {
