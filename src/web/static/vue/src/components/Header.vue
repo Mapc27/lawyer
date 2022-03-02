@@ -40,7 +40,7 @@
 								</div>
 								<div class="inputer">
 									<div class="label">Номер телефона*</div>
-									<vue-mask id="phone_number" class="form-input" mask="+7 (999) 999 99 99" :options="options" v-model="phone_number" :raw="false" type="text" name="phone_number"></vue-mask>
+									<vue-mask id="phone_number" class="form-input" mask="+7 (999) 999 99 99" :options="options" v-model="phone_number" :raw="true" type="text" name="phone_number"></vue-mask>
 								</div>
 								<div class="inputer">
 									<div class="label">Ваше имя</div>
@@ -56,6 +56,7 @@
 									</button>
 								</div>
 							</div>
+							{{this.message}}
 						</div>
 
 					</div>
