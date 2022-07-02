@@ -14,6 +14,9 @@ services:
     networks:
       - web
       - project
+    environment:
+      VIRTUAL_HOST: evomark.ru
+      LETSENCRYPT_HOST: evomark.ru
 
   app:
     image: lawyer-python:latest
