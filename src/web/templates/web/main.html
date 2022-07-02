@@ -1,9 +1,221 @@
 {% extends "web/base.html" %}
+{% load static %}
+{% block title %}main{% endblock %}
 
-{% block title %}Lawyer{% endblock %}
+{% block links %}
+    <link rel="stylesheet" type="text/css" href="{% static 'web/slick/slick.css' %}"/>
+    <link rel="stylesheet" type="text/css" href="{% static 'web/slick/slick-theme.css' %}"/>
 
-{% block links %}{% endblock %}
-
+  <link rel="stylesheet" href="{% static 'web/header.css' %}">
+    <link rel="stylesheet" href="{% static 'web/style.css' %}">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+{% endblock %}
 {% block body %}
-<div id="app">Hello</div>
+<div class="main">
+    <div class="container">
+        <div class="first-page">
+            <div class="title">
+                <div class="title-text">
+                    Патентное бюро EVOMARK <br>
+                    Регистрация товарных знаков под ключ в России и в любой стране мира
+                </div>
+                <div class="title-description">
+                    Профессиональная защита интеллектуальной собственности: авторское право, регистрация патентов, судебные споры
+                </div>
+                <div class="title-button">
+                    <a href="#" class="title-button-link link">
+                        СВЯЗАТЬСЯ С НАМИ
+                    </a>
+                </div>
+
+            </div>
+            <div class="form">
+                <div class="inner-form">
+                    <form id="checkForm" action="/" name="checkForm">
+                        <div class="form-title">ПРОВЕРИТЬ ЗНАК <b> БЕСПЛАТНО </b></div>
+                        <div class="input-field">
+                            <div class="form-input form-input-title">
+                                <div class="yours-sign">Ваш знак</div>
+                                <label class="file-input">
+                                    <input id="trademark" style="display: none" type="file" name="trademark">
+                                    Загрузить макет
+                                </label>
+                            </div>
+                        </div>
+                        <div class="input-field">
+                            <input id="person_name" class="form-input" type="text" name="person_name" placeholder="Имя">
+                        </div>
+                        <div class="input-field input-field-big">
+                            <textarea id="description" class="form-input form-input-big" name="description" placeholder="Вид деятельности / комментарий"></textarea>
+                        </div>
+                        <div class="input-field">
+                            <input id="phone_number" class="form-input" type="text" name="phone_number" placeholder="* Телефон" required>
+                        </div>
+                        <div class="before-button">* - обязательные поля для ввода</div>
+                        <div class="form-button-div">
+                            <button class="form-button">Отправить</button>
+                        </div>
+                        <div class="after-button">Нажимая на кнопку, я принимаю условия <br>
+                            <a class="after-button-link" href="#">пользовательского соглашения сайта</a>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="second-page">
+        <div class="container">
+            <div class="second-page-title">
+                <h2 class="second-page-title-text">Наши услуги</h2>
+                <hr class="line" align="center" width="50" size="3" color="#ffffff" />
+            </div>
+            <div class="services">
+                <div class="service">
+                    <div class="inner-service">
+                        <div class="service-first-part">
+                            <h3 class="service-title">Регистрация
+                                товарного знака</h3>
+                            <div class="service-text">Товарный знак отличный способ защитить свой бренд от копирования и легкий инструмент защиты вашего бизнеса. Мы успешно регистрирует товарные знака как в России так и по всему миру.</div>
+                        </div>
+                        <div class="service-button-div">
+                            <button class="service-button" type="button">Узнать больше</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="service">
+                    <div class="inner-service">
+                        <div class="service-first-part">
+                            <h3 class="service-title">Управление товарным знаком</h3>
+                            <div class="service-text">После регистрации товарного знака важно следить за его судьбой: вносить изменения, передавать права, продлевать срок его действия и делать много другое. </div>
+                        </div>
+                        <div class="service-button-div">
+                            <button class="service-button">Узнать больше</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="service">
+                    <div class="inner-service">
+                        <div class="service-first-part">
+                            <h3 class="service-title">Защита интеллектуальной собственности</h3>
+                            <div class="service-text">Мы успешно защищаем интересы наших клиентов в судах РФ и иных странах, Роспатенте, Федеральной антимонопольной службе.</div>
+                        </div>
+                        <div class="service-button-div">
+                            <button class="service-button">Узнать больше</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="advantages">
+                <div class="advantage">
+                    <div class="advantage-title">Оптимизация затрат</div>
+                    <div class="advantage-text">
+                        30% скидка на пошлины <br> Рассрочка для клиентов
+                    </div>
+                </div>
+                <div class="advantage">
+                    <div class="advantage-title">Надежность</div>
+                    <div class="advantage-text">
+                        Работа опытных <br>
+                        профессионалов
+                    </div>
+                </div>
+                <div class="advantage">
+                    <div class="advantage-title">Быстрота</div>
+                    <div class="advantage-text">
+                        Вся работа ведется <br>
+                        в электронном виде
+                    </div>
+                </div>
+            </div>
+            <div class="service-last-button-div">
+                <a class="service-last-button">Расчитать стоимость работы</a>
+            </div>
+        </div>
+
+    </div>
+    <div class="third-page">
+        <div class="third-page-title">
+            <h2 class="second-page-title-text">Решённые задачи</h2>
+            <hr class="line" align="center" width="50" size="3" color="#000000" />
+        </div>
+        <div class="solved-tasks">
+            <div class="solved-task">
+                <div class="solved-task-div">
+                    <div class="solved-task-title">
+                        <div class="solved-task-title-text">
+                            Название решённой задачи
+                        </div>
+                    </div>
+                    <div class="solved-task-inner">
+                        <div class="solved-task-header">История</div>
+                        <div class="solved-task-text">Nissan X_Trail 2011 года в "салоне" за 739 000 руб. (сдал свое авто в Trade-In за 320 000 руб.). На следующий день после покупки автомобиля при запуске двигателя на приборной панели загорелась ошибка тормозной системы, антиблокировочной системы тормозов и полного привода. Официальный дилер насчитал ремонт на 600 000 руб.
+                        </div>
+                        <div class="solved-task-header">Итог</div>
+                        <div class="solved-task-text">Nissan X_Trail  вернули в автосалон, также вернули автомобиль, сданный в Trade-In.</div>
+                    </div>
+                </div>
+            </div>
+            <div class="solved-task">
+                <div class="solved-task-div">
+                    <div class="solved-task-title">
+                        <div class="solved-task-title-text">
+                            Название решённой задачи
+                        </div>
+                    </div>
+                    <div class="solved-task-inner">
+                        <div class="solved-task-header">История</div>
+                        <div class="solved-task-text">Nissan X_Trail 2011 года в "салоне" за 739 000 руб. (сдал свое авто в Trade-In за 320 000 руб.). На следующий день после покупки автомобиля при запуске двигателя на приборной панели загорелась ошибка тормозной системы, антиблокировочной системы тормозов и полного привода. Официальный дилер насчитал ремонт на 600 000 руб.
+                        </div>
+                        <div class="solved-task-header">Итог</div>
+                        <div class="solved-task-text">Nissan X_Trail  вернули в автосалон, также вернули автомобиль, сданный в Trade-In.</div>
+                    </div>
+                </div>
+            </div>
+            <div class="solved-task">
+                <div class="solved-task-div">
+                    <div class="solved-task-title">
+                        <div class="solved-task-title-text">
+                            Название решённой задачи
+                        </div>
+                    </div>
+                    <div class="solved-task-inner">
+                        <div class="solved-task-header">История</div>
+                        <div class="solved-task-text">Nissan X_Trail 2011 года в "салоне" за 739 000 руб. (сдал свое авто в Trade-In за 320 000 руб.). На следующий день после покупки автомобиля при запуске двигателя на приборной панели загорелась ошибка тормозной системы, антиблокировочной системы тормозов и полного привода. Официальный дилер насчитал ремонт на 600 000 руб.
+                        </div>
+                        <div class="solved-task-header">Итог</div>
+                        <div class="solved-task-text">Nissan X_Trail  вернули в автосалон, также вернули автомобиль, сданный в Trade-In.</div>
+                    </div>
+                </div>
+            </div>
+            <div class="solved-task">
+                <div class="solved-task-div">
+                    <div class="solved-task-title">
+                        <div class="solved-task-title-text">
+                            Название решённой задачи
+                        </div>
+                    </div>
+                    <div class="solved-task-inner">
+                        <div class="solved-task-header">История</div>
+                        <div class="solved-task-text">
+                            Nissan X_Trail 2011 года в "салоне" за 739 000 руб. (сдал свое авто в Trade-In за 320 000 руб.). На следующий день после покупки автомобиля при запуске двигателя на приборной панели загорелась ошибка тормозной системы, антиблокировочной системы тормозов и полного привода. Официальный дилер насчитал ремонт на 600 000 руб.
+                        </div>
+                        <div class="solved-task-header">Итог</div>
+                        <div class="solved-task-text">
+                            Nissan X_Trail  вернули в автосалон, также вернули автомобиль, сданный в Trade-In.
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script type="text/javascript" src="//code.jquery.com/jquery-1.11.0.min.js"></script>
+<script type="text/javascript" src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+<script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+<script type="text/javascript" src="{% static 'web/slick/slick.min.js' %}"></script>
+<script type="text/javascript" src="{% static 'web/main.js' %}"></script>
 {% endblock %}

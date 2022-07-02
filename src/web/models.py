@@ -41,12 +41,11 @@ class User(BaseModel, AbstractBaseUser, PermissionsMixin):
 
 
 class Application(BaseModel):
-    phone_validator = RegexValidator(regex="^(\+7|8|)([0-9]{10})$",
-                                     message="Phone number incorrect")
+    trademark = models.FileField(upload_to="trademarks/", null=True, blank=True, verbose_name="Товарный знак")
 
-    phone_number = models.CharField(validators=[phone_validator], max_length=16)
-    person_name = models.CharField(max_length=100)
-    description = models.TextField()
+    phone_number = models.CharField(max_length=20, null=False)
+    person_name = models.CharField(max_length=100, null=True)
+    description = models.TextField(null=True)
     is_notified = models.BooleanField(default=False)
 
     class Meta:

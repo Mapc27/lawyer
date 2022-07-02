@@ -5,7 +5,7 @@ from web.models import Application, SolvedApplication
 class ApplicationSerializer(serializers.ModelSerializer):
     class Meta:
         model = Application
-        fields = ('phone_number', 'person_name', 'description')
+        fields = ('trademark', 'phone_number', 'person_name', 'description')
 
 
 class ApplicationViewSerializer(serializers.ModelSerializer):

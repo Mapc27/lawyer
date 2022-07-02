@@ -11,6 +11,10 @@ services:
     depends_on:
       - app
     restart: always
+    networks:
+      - web
+      - project
+
   app:
     image: lawyer-python:latest
     build:
@@ -18,11 +22,11 @@ services:
       dockerfile: deploy/python/Dockerfile
     depends_on:
       - db
-      - redis
     environment:
       DB_HOST: db
-      CELERY_BROKER_URL: redis://redis:6379/0
     restart: always
+    networks:
+      - project
 
   db:
     image: postgres:11.1-alpine
@@ -35,11 +39,15 @@ services:
     volumes:
       - db:/var/lib/postgresql/data
     restart: always
-
-  redis:
-    image: redis:6-alpine
-    restart: always
-
+    networks:
+      - project
 
 volumes:
   db:
+  app:
+
+networks:
+  project:
+  web:
+    external:
+      name: web

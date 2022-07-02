@@ -3,15 +3,30 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>{% block title %} {% endblock %}</title>
-  {% block links %}  {% endblock %}
-  <link rel="stylesheet" href="{% static 'dist/css/chunk-vendors.css' %}">
-  <link rel="stylesheet" href="{% static 'dist/css/app.css' %}">
+  {% block links %} {% endblock %}
 </head>
 <body>
+<header class="header">
+    <div class="header-first-part">
+        <div class="logo">
+            <h1 class="logo-text">EVOMARK</h1>
+            <h2 class="logo-after-text">Защита интеллектуальной <br> собственности</h2>
+        </div>
+        <div class="nav-items">
+            <a class="nav-item-link link" href="#"><nav class="nav-item">УСЛУГИ</nav></a>
+            <a class="nav-item-link link" href="#"><nav class="nav-item">СТОИМОСТЬ</nav></a>
+            <a class="nav-item-link link" href="#"><nav class="nav-item">ПРОЕКТЫ</nav></a>
+            <a class="nav-item-link link" href="#"><nav class="nav-item">КОНТАКТЫ</nav></a>
+        </div>
+    </div>
+    <div class="contact-part">
+        <div class="contact-item">8 (986) 923 - 51 -53</div>
+        <div class="contact-item">|</div>
+        <div class="contact-item">evomark@inbox.ru</div>
+    </div>
+</header>
 {% block body %} {% endblock %}
 </body>
-    <script src="{% static 'dist/js/chunk-vendors.js' %}"></script>
-    <script src="{% static 'dist/js/app.js' %}"></script>
-
 </html>
