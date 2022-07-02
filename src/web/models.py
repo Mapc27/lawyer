@@ -45,7 +45,7 @@ class Application(BaseModel):
 
     phone_number = models.CharField(max_length=20, null=False)
     person_name = models.CharField(max_length=100, null=True)
-    description = models.TextField(null=True)
+    description = models.CharField(max_length=1000, null=True)
     is_notified = models.BooleanField(default=False)
 
     class Meta:
