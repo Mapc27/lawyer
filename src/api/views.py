@@ -20,8 +20,6 @@ class ApplicationsView(mixins.ListModelMixin, mixins.CreateModelMixin, mixins.Re
             return ApplicationViewSerializer
 
     def create(self, request, *args, **kwargs):
-        print(request.data)
-        print(request.headers)
         if Application.objects.filter(phone_number=request.data['phone_number']).count() > 2:
             return Response(data={'detail': 'Слишком много записей для этого номера телефона'},
                             status=status.HTTP_429_TOO_MANY_REQUESTS)

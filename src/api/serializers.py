@@ -11,7 +11,7 @@ class ApplicationSerializer(serializers.ModelSerializer):
 class ApplicationViewSerializer(serializers.ModelSerializer):
     class Meta:
         model = Application
-        fields = ('id', 'phone_number', 'person_name', 'description')
+        fields = ('id', 'trademark', 'phone_number', 'person_name', 'description')
 
 
 class SolvedApplicationViewSerializer(serializers.ModelSerializer):

@@ -30,11 +30,11 @@ services:
     restart: always
     networks:
       - project
+    volumes:
+      - /media:/app/src/media
 
   db:
     image: postgres:11.1-alpine
-    ports:
-      - 5432:5432
     environment:
       POSTGRES_DB: lawyer
       POSTGRES_USER: lawyer
