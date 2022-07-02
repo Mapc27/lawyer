@@ -89,10 +89,10 @@ WSGI_APPLICATION = 'lawyer.wsgi.application'
 
 DATABASES = {
     "default": {
-        "ENGINE": "django.db.backends.postgresql",
-        "NAME": os.environ.get("DB_NAME", "lawyer"),
-        "USER": os.environ.get("DB_USER", "lawyer"),
-        "PASSWORD": os.environ.get("DB_PASSWORD", "lawyer"),
+        "ENGINE": "django.db.backends.mysql",
+        "NAME": os.environ.get("DB_NAME", "u1720096_default"),
+        "USER": os.environ.get("DB_USER", "u1720096_default"),
+        "PASSWORD": os.environ.get("DB_PASSWORD", "q4uvqiAEJuIXq655"),
         "HOST": os.environ.get("DB_HOST", "localhost"),
         "PORT": os.environ.get("DB_PORT", "5432"),
     }
@@ -129,16 +129,12 @@ USE_I18N = True
 
 USE_TZ = True
 
-if DEBUG:
-    CORS_ORIGIN_ALLOW_ALL = True
-else:
-    CORS_ALLOWED_ORIGINS = ("http://testing-system.a.uenv.ru", "https://testing-system.kpfu.ru")
-
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/4.0/howto/static-files/
 
 STATIC_URL = '/static/'
-STATICFILES_DIRS = (os.path.join(BASE_DIR, 'web/static'), os.path.join(BASE_DIR, 'static'),)
+STATIC_ROOT = 'src/static'
+# STATICFILES_DIRS = (os.path.join(BASE_DIR, 'static'), os.path.join(BASE_DIR, 'web/static'),)
 
 MEDIA_URL = "/media/"
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
