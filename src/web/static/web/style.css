@@ -33,6 +33,11 @@ button, a{
     justify-content: center;
 }
 
+.first-page-element{
+    align-self: center;
+}
+
+
 .title{
     max-width: 770px;
     margin: 0 30px 0 0;
@@ -84,7 +89,7 @@ button, a{
     border-radius: 10px;
     border: 1px #000000 solid;
 
-    max-width: 370px;
+    min-width: 370px;
 }
 
 .inner-form{
@@ -427,6 +432,9 @@ button, a{
 }
 
 @media (max-width: 1250px){
+    .main{
+        margin-top: 100px;
+    }
     .nav-items{
         display: none;
     }
@@ -443,8 +451,16 @@ button, a{
         padding: 15px 45px;
     }
 
+    .form{
+        min-width: 324px;
+    }
+
     .inner-form{
         padding: 15px 27px;
+    }
+
+    .file-input{
+        padding: 3px 12px;
     }
 
     .form-input{
@@ -455,6 +471,11 @@ button, a{
     .form-input, .form-input::placeholder{
         font-size: 14px;
     }
+
+    .form-input-title{
+        padding: 9px 10px;
+    }
+
 
     .form-input-big{
         height: 64px;
@@ -492,38 +513,17 @@ button, a{
         font-size: 40px;
     }
 
+    .form{
+        min-width: 300px;
+    }
+
     .inner-form{
         padding: 15px 27px;
     }
 
-    .form-title{
-        font-size: 16px;
-    }
-
-    .form-input{
-        padding: 8px 10px;
-        margin-top: 10px;
-    }
-
-    .form-input, .form-input::placeholder{
-        font-size: 12px;
-    }
-
-    .form-input-big{
-        height: 48px;
-    }
-
-    .form-button{
-        padding-top: 12px;
-        padding-bottom: 12px;
-    }
-
-    .before-button, .after-button, .after-button-link{
-        font-size: 10px;
-    }
-
-    .before-button{
-        margin-top: 10px;
+    .inner-service{
+        width: 70%;
+        margin: 0 0 0 20%;
     }
 
     .service-title{
@@ -534,15 +534,10 @@ button, a{
     .service-button{
         font-size: 14px;
     }
-
-    /*.slick-slide{*/
-    /*    padding: 0 10px;*/
-    /*}*/
-
 }
 
 
-@media (max-width: 770px){
+@media (max-width: 790px) {
     .logo-text{
         font-size: 32px;
     }
@@ -550,12 +545,23 @@ button, a{
     .logo-after-text{
         font-size: 14px;
     }
+    .contact-part{
+        display: block;
+    }
+
+    .separator{
+        display: none;
+    }
 
     .contact-item{
         font-size: 14px;
     }
 
-    .main{
+    .header{
+        height: 80px;
+    }
+
+        .main{
         margin-top: 50px;
     }
 
@@ -570,6 +576,7 @@ button, a{
 
     .form{
         margin: 70px auto 0 auto;
+        max-width: 370px;
     }
 
     .inner-form{
@@ -609,7 +616,9 @@ button, a{
     .before-button, .after-button, .after-button-link{
         font-size: 14px;
     }
+}
 
+@media (max-width: 770px){
     .second-page{
         margin: 100px auto 0 auto;
     }
@@ -619,8 +628,9 @@ button, a{
     }
 
     .service{
-        width: 370px;
-        height: 370px;
+        max-width: 370px;
+        width: inherit;
+        /*width: 54%;*/
         margin: 40px auto 0 auto;
     }
 
@@ -651,8 +661,50 @@ button, a{
     .advantages{
         margin: 70px auto 0 auto;
     }
-
 }
 
 @media (max-width: 575px){
+    .header{
+        height: 100%;
+    }
+
+    .logo{
+        display: block;
+    }
+
+    .header-first-part, .contact-part{
+        margin: auto 0;
+    }
+
+    .logo-after-text, .logo-text{
+        margin: 0;
+    }
+
+    .inner-form{
+        padding: 20px 25px;
+    }
+
+    .form-input{
+        padding: 12px 10px;
+    }
+
+    .advantages{
+        display: block;
+        margin-top: 50px;
+    }
+
+    .advantage{
+        margin: 30px auto 0 auto;
+        width: inherit;
+        max-width: 265px;
+    }
+
+    .advantage:first-child{
+        margin: 0 auto 0 auto;
+    }
+
+    .service-last-button{
+        padding: 12px 5%;
+        font-size: 16px;
+    }
 }

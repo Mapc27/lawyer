@@ -20,13 +20,12 @@
 
 .nav-items{
     display: flex;
-    margin-left: 124px;
+    margin-left: 9%;
 }
 
 .contact-part{
     display: flex;
 }
-
 
 .logo-after-text{
     margin: auto 0 auto 10px;
@@ -34,6 +33,10 @@
 
 .nav-item-link{
     margin: auto 0 auto 10px;
+}
+
+.nav-item-link:first-child{
+    margin: auto 0;
 }
 
 .nav-item:first-child{

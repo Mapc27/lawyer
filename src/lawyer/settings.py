@@ -52,7 +52,6 @@ INSTALLED_APPS = [
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
-    "whitenoise.middleware.WhiteNoiseMiddleware",
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
@@ -89,7 +88,7 @@ WSGI_APPLICATION = 'lawyer.wsgi.application'
 
 DATABASES = {
     "default": {
-        "ENGINE": "django.db.backends.mysql",
+        "ENGINE": f"django.db.backends.{os.environ.get('DB', 'mysql')}",
         "NAME": os.environ.get("DB_NAME", "u1720096_default"),
         "USER": os.environ.get("DB_USER", "u1720096_default"),
         "PASSWORD": os.environ.get("DB_PASSWORD", "q4uvqiAEJuIXq655"),
@@ -134,7 +133,6 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 STATIC_ROOT = 'src/static'
-# STATICFILES_DIRS = (os.path.join(BASE_DIR, 'static'), os.path.join(BASE_DIR, 'web/static'),)
 
 MEDIA_URL = "/media/"
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
