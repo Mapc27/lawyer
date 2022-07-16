@@ -6,7 +6,7 @@
     <link rel="stylesheet" type="text/css" href="{% static 'web/slick/slick.css' %}"/>
     <link rel="stylesheet" type="text/css" href="{% static 'web/slick/slick-theme.css' %}"/>
 
-  <link rel="stylesheet" href="{% static 'web/header.css' %}">
+    <link rel="stylesheet" href="{% static 'web/header.css' %}">
     <link rel="stylesheet" href="{% static 'web/style.css' %}">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -26,7 +26,7 @@
                         Профессиональная защита интеллектуальной собственности: авторское право, регистрация патентов, судебные споры
                     </div>
                     <div class="title-button">
-                        <a href="#" class="title-button-link link">
+                        <a href="#contactForm" class="title-button-link link">
                             СВЯЗАТЬСЯ С НАМИ
                         </a>
                     </div>
@@ -36,7 +36,7 @@
             <div class="first-page-second-element">
                 <div class="form">
                     <div class="inner-form">
-                        <form id="checkForm" name="checkForm" novalidate>
+                        <form id="checkForm" name="checkForm">
                             <div class="form-title">ПРОВЕРИТЬ ЗНАК <br> <b> БЕСПЛАТНО </b></div>
                             <div class="input-field">
                                 <div class="form-input form-input-title">
@@ -56,9 +56,10 @@
                             <div class="input-field">
                                 <input id="phone_number" class="form-input" type="text" name="phone_number" placeholder="* Телефон" required>
                             </div>
+                            <div id="invalid-message" class="invalid-message">Введите телефон в верном формате</div>
                             <div class="before-button">* - обязательные поля для ввода</div>
                             <div class="form-button-div">
-                                <button type="submit" class="form-button">Отправить</button>
+                                <button name="form_button" class="form-button">Отправить</button>
                             </div>
                             <div class="after-button">Нажимая на кнопку, я принимаю условия <br>
                                 <a class="after-button-link" href="#">пользовательского соглашения сайта</a>
@@ -220,7 +221,7 @@
             <div class="second-page-inner">
                 <div class="contact-form">
                     <div class="contact-inner-form">
-                        <form id="contactForm" action="/" name="contactForm">
+                        <form id="contactForm" name="contactForm">
                             <div class="first-row">
                                 <div class="first-section">
                                     <div class="contact-form-title">Заказать услугу</div>
@@ -228,7 +229,7 @@
                                 </div>
                                 <div class="second-section">
                                     <p class="contact-phone">
-                                        8 (986) 923 - 51 -53
+                                        <a class="contact-form-phone" href="tel:+79869235153">8 (986) 923 - 51 -53</a>
                                     </p>
                                 </div>
                             </div>
@@ -247,10 +248,11 @@
                                     </div>
                                 </div>
                             </div>
+                            <div id="contact-invalid-message" class="invalid-message">Введите телефон в верном формате</div>
                             <div class="contact-before-button color-white">* - обязательные поля для ввода</div>
                             <div class="third-row">
                                 <div>
-                                    <button class="contact-form-button">Отправить</button>
+                                    <button class="contact-form-button" name="form_button">Отправить</button>
                                 </div>
                                 <div class="contact-after-button color-white">Нажимая на кнопку, я принимаю условия <br>
                                     <a class="contact-after-button-link color-white" href="#">пользовательского соглашения сайта</a>
@@ -270,6 +272,7 @@
 <script type="text/javascript" src="{% static 'web/cleave-phone.ru.js' %}"></script>
 
 <script type="text/javascript" src="{% static 'web/axios.min.js' %}"></script>
+
 <script type="text/javascript" src="{% static 'web/slick/slick.min.js' %}"></script>
 
 <script type="text/javascript" src="{% static 'web/main.js' %}"></script>
