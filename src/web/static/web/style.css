@@ -1,15 +1,16 @@
 html, body{
-    margin: 0 auto;
+    margin: 0;
     overflow-x: hidden;
+    max-width: 100%;
 }
 
 body{
     font-size: 16px;
     font-weight: 400;
 
-    height: 3000px;
     font-family: 'Montserrat', sans-serif;
     position: relative;
+    background: #f1f1f1;
 }
 
 button, a{
@@ -33,14 +34,15 @@ button, a{
     justify-content: center;
 }
 
-.first-page-element{
-    align-self: center;
+
+.first-page-first-element{
+    width: 67%;
+    margin: 0 2% 0 0;
 }
 
 
-.title{
-    max-width: 770px;
-    margin: 0 30px 0 0;
+.first-page-second-element{
+    width: 31%;
 }
 
 .title-text{
@@ -72,7 +74,7 @@ button, a{
     text-transform: uppercase;
 
     border-radius: 10px;
-    border: 1px #000000 solid;
+    border: 2px #000000 solid;
     padding: 20px 60px;
 
     box-shadow: 0 16px 15px 0 rgba(0, 0, 0, 0.1);
@@ -87,9 +89,11 @@ button, a{
 
 .form{
     border-radius: 10px;
-    border: 1px #000000 solid;
+    border: none;
 
-    min-width: 370px;
+    max-width: 690px;
+    background: #ffffff;
+    box-shadow: 4px 4px 8px 0 rgba(34, 60, 80, 0.2);
 }
 
 .inner-form{
@@ -109,7 +113,8 @@ button, a{
 .form-input{
     margin: 20px 0 0 0;
     padding: 16px 10px;
-    border: 1px #000000 solid;
+    border: none;
+    outline: none;
     border-radius: 10px;
 
     width: 100%;
@@ -119,17 +124,17 @@ button, a{
 
     font-family: 'Montserrat', sans-serif;
     font-weight: 500;
+
+    position: relative;
+
+    background: #f0f1f8;
 }
 
-.file-input{
-    align-items: center;
-    background: #F2F2F2;
-    padding: 7px 15px;
-    font-size: 14px;
-    font-weight: 300;
-    border-radius: 5px;
-    cursor: pointer;
+.form-input:active{
+    border: none;
+    outline:none
 }
+
 
 .form-input-title{
     font-family: 'Montserrat', sans-serif;
@@ -138,17 +143,33 @@ button, a{
     font-size: 16px;
     display: flex;
     justify-content: space-between;
+}
 
-    padding: 10px 10px;
+
+.file-input{
+    align-items: center;
+    background: #dedede;
+    padding: 7px 15px;
+    font-size: 14px;
+    font-weight: 300;
+    border-radius: 5px;
+    cursor: pointer;
+
+    position: absolute;
+    right: 10px;
+    top: 10px;
+    bottom: 10px;
+
+}
+
+.file-input:hover{
+    color: #000000;
 }
 
 .yours-sign{
     margin: auto 0;
 }
 
-.file-input:hover{
-    font-weight: 400;
-}
 
 .form-input-big{
     height: 64px;
@@ -173,6 +194,8 @@ button, a{
     padding-bottom: 22px;
     width: 100%;
 
+    font-size: 16px;
+    font-weight: 500;
     color: #ffffff;
     border-radius: 10px;
     background-color: #343638;
@@ -184,6 +207,10 @@ button, a{
 
 .before-button{
     margin-top: 20px;
+}
+
+.after-button{
+    margin-top: 8px;
 }
 
 .before-button, .after-button, .after-button-link{
@@ -222,7 +249,7 @@ button, a{
 .service{
     width: 33.33333%;
 
-    border: 1px solid #ffffff;
+    border: 2px solid #ffffff;
     border-radius: 10px;
 
     margin-left: 30px;
@@ -360,7 +387,6 @@ button, a{
     bottom: 0;
     border: 3px solid #343638;
     border-radius: 10px;
-    /*max-width: 633px;*/
 }
 
 .solved-task-title{
@@ -377,7 +403,7 @@ button, a{
     display: flex;
     flex-direction: column;
 
-    background-color: #ffffff;
+    background-color: #f1f1f1;
 }
 
 .solved-task-title:before{
@@ -431,6 +457,169 @@ button, a{
     pointer-events: auto;
 }
 
+.second-page-inner{
+    padding: 100px 0;
+}
+
+.contact-form{
+    border-radius: 10px;
+    border: 2px #000000 solid;
+
+    margin: 0 auto;
+}
+
+.contact-inner-form{
+    padding: 20px 36px;
+
+}
+
+.contact-form-title{
+    text-align: center;
+    font-size: 19px;
+}
+
+.contact-input-field{
+    display: flex;
+}
+
+.contact-form-input{
+    margin: 20px 0 0 0;
+    padding: 16px 10px;
+    border: 1px #000000 solid;
+    border-radius: 10px;
+
+    width: 100%;
+
+    color: #000000;
+    font-size: 16px;
+
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 500;
+}
+
+.contact-form-input-big{
+    height: 64px;
+    resize: none;
+
+    color: #000000;
+}
+
+.contact-form-input::placeholder, .contact-form-input-big::placeholder{
+    font-family: 'Montserrat', sans-serif;
+    color: #a9a9a9;
+    font-weight: 400;
+    font-size: 16px;
+}
+
+.contact-form-button{
+    padding-top: 22px;
+    padding-bottom: 22px;
+    width: 100%;
+
+    color: #ffffff;
+    border-radius: 10px;
+    background-color: #343638;
+    border: none;
+
+    text-transform: uppercase;
+    cursor: pointer;
+}
+
+.contact-before-button{
+    margin-top: 20px;
+}
+
+.contact-before-button, .contact-after-button, .contact-after-button-link{
+    color: #4B4E53;
+    font-size: 14px;
+}
+
+.contact-form{
+    border: 2px #ffffff solid;
+}
+
+.contact-inner-form{
+    padding: 30px 48px;
+}
+
+.first-row, .second-row{
+    display: flex;
+    justify-content: space-between;
+}
+
+.first-section{
+    width: 60%;
+}
+
+.contact-form-title{
+    text-align: start;
+    font-weight: 700;
+    font-size: 28px;
+}
+
+.form-description{
+    margin-top: 13px;
+}
+
+.second-section{
+    display: flex;
+    width: 36.8%;
+}
+
+.contact-phone{
+    margin: auto 0 auto auto;
+
+    font-size: 24px;
+    font-weight: 700;
+}
+
+.third-section{
+    width: 35%;
+}
+
+
+.fourth-section{
+    width: 62%;
+}
+
+.contact-form-input{
+    color: #ffffff;
+    border: 1px #ffffff solid;
+
+    background-color: #343638;
+}
+
+.contact-form-input-big{
+    width: 100%;
+}
+
+.color-white{
+    color: #ffffff;
+}
+
+.third-row{
+    display: flex;
+    margin-top: 10px;
+}
+
+.contact-form-button{
+    padding: 14px 20px;
+
+    background-color: #ffffff;
+    color: #343638;
+    font-size: 16px;
+    font-weight: 600;
+}
+
+.contact-before-button{
+    margin-top: 30px;
+}
+
+.contact-after-button{
+    margin: auto 0 auto 25px;
+}
+
+
 @media (max-width: 1250px){
     .main{
         margin-top: 100px;
@@ -451,16 +640,14 @@ button, a{
         padding: 15px 45px;
     }
 
-    .form{
-        min-width: 324px;
-    }
-
     .inner-form{
         padding: 15px 27px;
     }
 
     .file-input{
-        padding: 3px 12px;
+        top: 6px;
+        bottom: 6px;
+        padding: 6px 15px;
     }
 
     .form-input{
@@ -471,11 +658,6 @@ button, a{
     .form-input, .form-input::placeholder{
         font-size: 14px;
     }
-
-    .form-input-title{
-        padding: 9px 10px;
-    }
-
 
     .form-input-big{
         height: 64px;
@@ -509,12 +691,16 @@ button, a{
 
 
 @media (max-width: 990px) {
-    .title-text{
-        font-size: 40px;
+    .first-page-first-element{
+        width: 62%;
     }
 
-    .form{
-        min-width: 300px;
+    .first-page-second-element{
+        width: 35%;
+    }
+
+    .title-text{
+        font-size: 40px;
     }
 
     .inner-form{
@@ -533,6 +719,13 @@ button, a{
 
     .service-button{
         font-size: 14px;
+    }
+
+    .file-input{
+        top: 6px;
+        bottom: 6px;
+        right: 6px;
+        padding: 6px 3px;
     }
 }
 
@@ -561,12 +754,21 @@ button, a{
         height: 80px;
     }
 
-        .main{
+    .main{
         margin-top: 50px;
     }
 
     .first-page{
         display: block;
+    }
+
+    .first-page-first-element{
+        width: 100%;
+
+    }
+
+    .first-page-second-element{
+        width: 100%;
     }
 
     .title{
@@ -576,7 +778,6 @@ button, a{
 
     .form{
         margin: 70px auto 0 auto;
-        max-width: 370px;
     }
 
     .inner-form{
@@ -590,6 +791,15 @@ button, a{
     .form-input{
         margin: 20px 0 0 0;
         padding: 16px 10px;
+
+        font-size: 16px;
+    }
+
+    .file-input{
+        right: 10px;
+        top: 10px;
+        bottom: 10px;
+        padding: 7px 15px;
     }
 
     .form-input-big{
@@ -616,6 +826,23 @@ button, a{
     .before-button, .after-button, .after-button-link{
         font-size: 14px;
     }
+
+    .first-row, .second-row, .third-row{
+        flex-direction: column;
+    }
+
+    .first-section, .second-section, .third-section, .fourth-section{
+        width: 100%;
+    }
+
+    .contact-phone{
+        margin: 15px 0;
+    }
+
+    .contact-after-button{
+        margin: 8px 0 0 0;
+    }
+
 }
 
 @media (max-width: 770px){
@@ -630,7 +857,6 @@ button, a{
     .service{
         max-width: 370px;
         width: inherit;
-        /*width: 54%;*/
         margin: 40px auto 0 auto;
     }
 
@@ -706,5 +932,9 @@ button, a{
     .service-last-button{
         padding: 12px 5%;
         font-size: 16px;
+    }
+
+    .contact-inner-form{
+        padding: 20px;
     }
 }

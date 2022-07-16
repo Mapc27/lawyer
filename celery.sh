@@ -1,1 +1,0 @@
-celery --app=lawyer worker --loglevel=INFO --queues=default --beat

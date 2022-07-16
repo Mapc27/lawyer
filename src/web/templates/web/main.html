@@ -16,7 +16,7 @@
 <div class="main">
     <div class="container">
         <div class="first-page">
-            <div class="first-page-element">
+            <div class="first-page-first-element">
                 <div class="title">
                     <div class="title-text">
                         Патентное бюро EVOMARK <br>
@@ -33,10 +33,10 @@
                 </div>
             </div>
 
-            <div class="first-page-element">
+            <div class="first-page-second-element">
                 <div class="form">
                     <div class="inner-form">
-                        <form id="checkForm" action="/" name="checkForm">
+                        <form id="checkForm" name="checkForm" novalidate>
                             <div class="form-title">ПРОВЕРИТЬ ЗНАК <br> <b> БЕСПЛАТНО </b></div>
                             <div class="input-field">
                                 <div class="form-input form-input-title">
@@ -58,7 +58,7 @@
                             </div>
                             <div class="before-button">* - обязательные поля для ввода</div>
                             <div class="form-button-div">
-                                <button class="form-button">Отправить</button>
+                                <button type="submit" class="form-button">Отправить</button>
                             </div>
                             <div class="after-button">Нажимая на кнопку, я принимаю условия <br>
                                 <a class="after-button-link" href="#">пользовательского соглашения сайта</a>
@@ -215,11 +215,62 @@
             </div>
         </div>
     </div>
+    <div class="second-page">
+        <div class="container">
+            <div class="second-page-inner">
+                <div class="contact-form">
+                    <div class="contact-inner-form">
+                        <form id="contactForm" action="/" name="contactForm">
+                            <div class="first-row">
+                                <div class="first-section">
+                                    <div class="contact-form-title">Заказать услугу</div>
+                                    <div class="form-description">Связаться со специалистом для расчета стоимости и получения коммерческого предложения.</div>
+                                </div>
+                                <div class="second-section">
+                                    <p class="contact-phone">
+                                        8 (986) 923 - 51 -53
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="second-row">
+                                <div class="third-section">
+                                     <div class="contact-input-field">
+                                        <input id="contact-person_name" class="contact-form-input" type="text" name="person_name" placeholder="Имя">
+                                    </div>
+                                     <div class="contact-input-field">
+                                        <input id="contact-phone_number" class="contact-form-input" type="text" name="phone_number" placeholder="* Телефон" required>
+                                    </div>
+                                </div>
+                                <div class="fourth-section">
+                                    <div class="contact-input-field input-field-big">
+                                        <textarea id="contact-description" class="contact-form-input contact-form-input-big" name="description" placeholder="Опишите вашу ситуацию"></textarea>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="contact-before-button color-white">* - обязательные поля для ввода</div>
+                            <div class="third-row">
+                                <div>
+                                    <button class="contact-form-button">Отправить</button>
+                                </div>
+                                <div class="contact-after-button color-white">Нажимая на кнопку, я принимаю условия <br>
+                                    <a class="contact-after-button-link color-white" href="#">пользовательского соглашения сайта</a>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 </div>
 
-<script type="text/javascript" src="//code.jquery.com/jquery-1.11.0.min.js"></script>
-<script type="text/javascript" src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
-<script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+<script type="text/javascript" src="{% static 'web/jquery.min.js' %}"></script>
+
+<script type="text/javascript" src="{% static 'web/cleave.min.js' %}"></script>
+<script type="text/javascript" src="{% static 'web/cleave-phone.ru.js' %}"></script>
+
+<script type="text/javascript" src="{% static 'web/axios.min.js' %}"></script>
 <script type="text/javascript" src="{% static 'web/slick/slick.min.js' %}"></script>
+
 <script type="text/javascript" src="{% static 'web/main.js' %}"></script>
 {% endblock %}
