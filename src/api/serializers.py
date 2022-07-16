@@ -5,16 +5,10 @@ from web.models import Application, SolvedApplication
 class ApplicationSerializer(serializers.ModelSerializer):
     class Meta:
         model = Application
-        fields = ('trademark', 'phone_number', 'person_name', 'description')
-
-
-class ApplicationViewSerializer(serializers.ModelSerializer):
-    class Meta:
-        model = Application
-        fields = ('id', 'trademark', 'phone_number', 'person_name', 'description')
+        fields = "__all__"
 
 
 class SolvedApplicationViewSerializer(serializers.ModelSerializer):
     class Meta:
         model = SolvedApplication
-        fields = ('id', 'title', 'history', 'result')
+        fields = "__all__"

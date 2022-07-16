@@ -34,12 +34,12 @@ function submit_form (e, form){
     }
 
     const formData = new FormData(form);
-    let href = ''
-    if(form === checkForm) {
-        href = 'api/applications/'
+    let href = 'api/applications/'
+    if (form === checkForm){
+        formData.append("is_check_trademark", true)
     }
-    else if(form === contactForm){
-        href = 'api/applications/'
+    else if (form === contactForm){
+        formData.append("is_check_trademark", false)
     }
 
     axios.post(

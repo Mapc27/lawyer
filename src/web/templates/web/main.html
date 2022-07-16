@@ -147,73 +147,29 @@
             <hr class="line" align="center" width="50" size="3" color="#000000" />
         </div>
         <div class="solved-tasks">
-            <div class="solved-task">
-                <div class="solved-task-div">
-                    <div class="solved-task-title">
-                        <div class="solved-task-title-text">
-                            Название решённой задачи
+
+            {% for solved_application in solved_applications %}
+                <div class="solved-task">
+                    <div class="solved-task-div">
+                        <div class="solved-task-title">
+                            <div class="solved-task-title-text">
+                                {{ solved_application.title }}
+                            </div>
                         </div>
-                    </div>
-                    <div class="solved-task-inner">
-                        <div class="solved-task-header">История</div>
-                        <div class="solved-task-text">Nissan X_Trail 2011 года в "салоне" за 739 000 руб. (сдал свое авто в Trade-In за 320 000 руб.). На следующий день после покупки автомобиля при запуске двигателя на приборной панели загорелась ошибка тормозной системы, антиблокировочной системы тормозов и полного привода. Официальный дилер насчитал ремонт на 600 000 руб.
-                        </div>
-                        <div class="solved-task-header">Итог</div>
-                        <div class="solved-task-text">Nissan X_Trail  вернули в автосалон, также вернули автомобиль, сданный в Trade-In.</div>
-                    </div>
-                </div>
-            </div>
-            <div class="solved-task">
-                <div class="solved-task-div">
-                    <div class="solved-task-title">
-                        <div class="solved-task-title-text">
-                            Название решённой задачи
-                        </div>
-                    </div>
-                    <div class="solved-task-inner">
-                        <div class="solved-task-header">История</div>
-                        <div class="solved-task-text">Nissan X_Trail 2011 года в "салоне" за 739 000 руб. (сдал свое авто в Trade-In за 320 000 руб.). На следующий день после покупки автомобиля при запуске двигателя на приборной панели загорелась ошибка тормозной системы, антиблокировочной системы тормозов и полного привода. Официальный дилер насчитал ремонт на 600 000 руб.
-                        </div>
-                        <div class="solved-task-header">Итог</div>
-                        <div class="solved-task-text">Nissan X_Trail  вернули в автосалон, также вернули автомобиль, сданный в Trade-In.</div>
-                    </div>
-                </div>
-            </div>
-            <div class="solved-task">
-                <div class="solved-task-div">
-                    <div class="solved-task-title">
-                        <div class="solved-task-title-text">
-                            Название решённой задачи
-                        </div>
-                    </div>
-                    <div class="solved-task-inner">
-                        <div class="solved-task-header">История</div>
-                        <div class="solved-task-text">Nissan X_Trail 2011 года в "салоне" за 739 000 руб. (сдал свое авто в Trade-In за 320 000 руб.). На следующий день после покупки автомобиля при запуске двигателя на приборной панели загорелась ошибка тормозной системы, антиблокировочной системы тормозов и полного привода. Официальный дилер насчитал ремонт на 600 000 руб.
-                        </div>
-                        <div class="solved-task-header">Итог</div>
-                        <div class="solved-task-text">Nissan X_Trail  вернули в автосалон, также вернули автомобиль, сданный в Trade-In.</div>
-                    </div>
-                </div>
-            </div>
-            <div class="solved-task">
-                <div class="solved-task-div">
-                    <div class="solved-task-title">
-                        <div class="solved-task-title-text">
-                            Название решённой задачи
-                        </div>
-                    </div>
-                    <div class="solved-task-inner">
-                        <div class="solved-task-header">История</div>
-                        <div class="solved-task-text">
-                            Nissan X_Trail 2011 года в "салоне" за 739 000 руб. (сдал свое авто в Trade-In за 320 000 руб.). На следующий день после покупки автомобиля при запуске двигателя на приборной панели загорелась ошибка тормозной системы, антиблокировочной системы тормозов и полного привода. Официальный дилер насчитал ремонт на 600 000 руб.
-                        </div>
-                        <div class="solved-task-header">Итог</div>
-                        <div class="solved-task-text">
-                            Nissan X_Trail  вернули в автосалон, также вернули автомобиль, сданный в Trade-In.
+                        <div class="solved-task-inner">
+                            <div class="solved-task-header">История</div>
+                            <div class="solved-task-text">
+                                {{ solved_application.history }}
+                            </div>
+                            <div class="solved-task-header">Итог</div>
+                            <div class="solved-task-text">
+                                {{ solved_application.result }}
+                            </div>
                         </div>
                     </div>
                 </div>
-            </div>
+            {% endfor %}
+
         </div>
     </div>
     <div class="second-page">

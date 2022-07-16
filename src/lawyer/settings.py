@@ -29,7 +29,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-ki48u#)37=q%v%6pttd=+uja5fd9$nw41-3%$#w9!k=k&+yeg)'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = os.environ.get("DEBUG", 'false').lower() == 'true'
 
 ALLOWED_HOSTS = ['*']
 
@@ -88,7 +88,7 @@ WSGI_APPLICATION = 'lawyer.wsgi.application'
 
 DATABASES = {
     "default": {
-        "ENGINE": f"django.db.backends.{os.environ.get('DB', 'mysql')}",
+        "ENGINE": f"django.db.backends.{'postgresql' if DEBUG else 'mysql'}",
         "NAME": os.environ.get("DB_NAME", "u1720096_default"),
         "USER": os.environ.get("DB_USER", "u1720096_default"),
         "PASSWORD": os.environ.get("DB_PASSWORD", "q4uvqiAEJuIXq655"),
@@ -122,7 +122,7 @@ AUTH_PASSWORD_VALIDATORS = [
 
 LANGUAGE_CODE = 'ru-ru'
 
-TIME_ZONE = 'UTC'
+TIME_ZONE = 'Europe/Moscow'
 
 USE_I18N = True
 
@@ -160,18 +160,15 @@ REST_FRAMEWORK = {
     "DEFAULT_PERMISSION_CLASSES": ["rest_framework.permissions.IsAuthenticated"],
 }
 
-TELEGRAM_BOT_TOKEN = os.environ.get("TELEGRAM_BOT_TOKEN")
-
 AUTH_USER_MODEL = 'web.User'
 
-CELERY_BROKER_URL = os.environ.get("CELERY_BROKER_URL", "redis://localhost:6379/0")
+EMAIL_BACKEND = os.environ.get("EMAIL_BACKEND", "django.core.mail.backends.smtp.EmailBackend")
+# EMAIL_USE_TLS = True
+EMAIL_USE_SSL = True
+EMAIL_HOST = os.environ.get("MAIL_SMTP_ADDRESS")
+EMAIL_HOST_USER = os.environ.get("MAIL_USER")
+EMAIL_HOST_PASSWORD = os.environ.get("MAIL_PASSWORD")
+EMAIL_PORT = int(os.environ.get("MAIL_SMTP_PORT", 465))
+DEFAULT_FROM_EMAIL = os.environ.get("DEFAULT_FROM_EMAIL", EMAIL_HOST_USER)
 
-CELERY_BEAT_SCHEDULE = {
-    "send-notification-every-minute": {
-        "task": "web.tasks.send_notification_task",
-        "schedule": crontab(),  # every minute
-        "args": (),
-    },
-}
-
-CSRF_TRUSTED_ORIGINS = ['http://localhost', 'https://0.0.0.0', 'https://localhost', 'http://0.0.0.0']
+DESTINATION_EMAIL = os.environ.get('DESTINATION_EMAIL')

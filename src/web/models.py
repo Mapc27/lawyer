@@ -1,7 +1,6 @@
 from django.contrib.auth.base_user import AbstractBaseUser
 from django.contrib.auth.models import PermissionsMixin, UserManager as DjangoUserManager
 from django.db import models
-from django.core.validators import RegexValidator
 
 
 class BaseModel(models.Model):
@@ -36,23 +35,41 @@ class User(BaseModel, AbstractBaseUser, PermissionsMixin):
     telegram_user_id = models.PositiveIntegerField(verbose_name="Telegram user ID", null=True, blank=True)
 
     class Meta:
-        verbose_name = "пользователь"
-        verbose_name_plural = "пользователи"
+        verbose_name = "Пользователь"
+        verbose_name_plural = "Пользователи"
+
+    def __str__(self):
+        return f"Пользователь [Email: {self.email}, Telegram: {self.telegram_user_id}]"
 
 
 class Application(BaseModel):
     trademark = models.FileField(upload_to="trademarks/", null=True, blank=True, verbose_name="Товарный знак")
 
-    phone_number = models.CharField(max_length=20, null=False)
-    person_name = models.CharField(max_length=100, null=True)
-    description = models.CharField(max_length=1000, null=True)
-    is_notified = models.BooleanField(default=False)
+    phone_number = models.CharField(max_length=20, null=False, verbose_name='Телефон')
+    person_name = models.CharField(max_length=100, null=True, verbose_name='Имя')
+    description = models.CharField(max_length=1000, null=True, verbose_name='Описание')
+
+    is_check_trademark = models.BooleanField(verbose_name="Проверка знака")
+    is_done = models.BooleanField(verbose_name="Заявка выполнена")
 
     class Meta:
         unique_together = [('phone_number', 'person_name', 'description')]
+        verbose_name = 'Заявка'
+        verbose_name_plural = 'Заявки'
+
+    def __str__(self):
+        return f"Заявка [Имя: {self.person_name}, Телефон:{self.phone_number}]"
 
 
 class SolvedApplication(BaseModel):
-    title = models.CharField(max_length=100)
-    history = models.TextField()
-    result = models.TextField()
+    title = models.CharField(max_length=35, null=False, verbose_name="Заголовок")
+    history = models.TextField(null=False, verbose_name="История")
+    result = models.TextField(null=False, verbose_name="Итог")
+
+    class Meta:
+        verbose_name = 'Решённая задача'
+        verbose_name_plural = 'Решённые задачи'
+
+    def __str__(self):
+        return f"Решённая задача: {self.title}"
+
