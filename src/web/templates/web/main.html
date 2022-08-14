@@ -1,12 +1,11 @@
 {% extends "web/base.html" %}
 {% load static %}
-{% block title %}main{% endblock %}
+{% block title %}Evomark{% endblock %}
 
 {% block links %}
     <link rel="stylesheet" type="text/css" href="{% static 'web/slick/slick.css' %}"/>
     <link rel="stylesheet" type="text/css" href="{% static 'web/slick/slick-theme.css' %}"/>
 
-    <link rel="stylesheet" href="{% static 'web/header.css' %}">
     <link rel="stylesheet" href="{% static 'web/style.css' %}">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -62,7 +61,7 @@
                                 <button name="form_button" class="form-button">Отправить</button>
                             </div>
                             <div class="after-button">Нажимая на кнопку, я принимаю условия <br>
-                                <a class="after-button-link" href="#">пользовательского соглашения сайта</a>
+                                <a class="after-button-link" href="{% url 'in_developing_view' %}">пользовательского соглашения сайта</a>
                             </div>
                         </form>
                     </div>
@@ -85,7 +84,9 @@
                             <div class="service-text">Товарный знак отличный способ защитить свой бренд от копирования и легкий инструмент защиты вашего бизнеса. Мы успешно регистрирует товарные знака как в России так и по всему миру.</div>
                         </div>
                         <div class="service-button-div">
-                            <button class="service-button" type="button">Узнать больше</button>
+                            <a href="{% url 'in_developing_view' %}">
+	                            <button class="service-button">Узнать больше</button>
+                            </a>
                         </div>
                     </div>
                 </div>
@@ -96,7 +97,9 @@
                             <div class="service-text">После регистрации товарного знака важно следить за его судьбой: вносить изменения, передавать права, продлевать срок его действия и делать много другое. </div>
                         </div>
                         <div class="service-button-div">
-                            <button class="service-button">Узнать больше</button>
+                            <a href="{% url 'in_developing_view' %}">
+	                            <button class="service-button">Узнать больше</button>
+                            </a>
                         </div>
                     </div>
                 </div>
@@ -107,7 +110,9 @@
                             <div class="service-text">Мы успешно защищаем интересы наших клиентов в судах РФ и иных странах, Роспатенте, Федеральной антимонопольной службе.</div>
                         </div>
                         <div class="service-button-div">
-                            <button class="service-button">Узнать больше</button>
+                            <a href="{% url 'in_developing_view' %}">
+	                            <button class="service-button">Узнать больше</button>
+                            </a>
                         </div>
                     </div>
                 </div>
@@ -115,28 +120,28 @@
 
             <div class="advantages">
                 <div class="advantage">
-                    <div class="advantage-title">Оптимизация затрат</div>
+                    <div class="advantage-title">Оптимальные цены</div>
                     <div class="advantage-text">
-                        30% скидка на пошлины <br> Рассрочка для клиентов
+                        Скидка на пошлины 30%. Рассрочка для клиентов без привлечения банков
                     </div>
                 </div>
                 <div class="advantage">
-                    <div class="advantage-title">Надежность</div>
+                    <div class="advantage-title">Качество</div>
                     <div class="advantage-text">
-                        Работа опытных <br>
-                        профессионалов
+                        Все наши специалисты и патентные поверенные имеют опыт работы от 10 лет.  Нас рекомендует рейтинг Best Lawyers
                     </div>
                 </div>
                 <div class="advantage">
-                    <div class="advantage-title">Быстрота</div>
+                    <div class="advantage-title">Скорость работы</div>
                     <div class="advantage-text">
-                        Вся работа ведется <br>
-                        в электронном виде
+                        Всю работу с Роспатентом мы ведем онлайн, что в разы ускоряет процесс регистрации
                     </div>
                 </div>
             </div>
             <div class="service-last-button-div">
-                <a class="service-last-button">Расчитать стоимость работы</a>
+                <a href="{% url 'in_developing_view' %}">
+                  <button class="service-last-button">Расчитать стоимость работы</button>
+                </a>
             </div>
         </div>
 
@@ -211,7 +216,7 @@
                                     <button class="contact-form-button" name="form_button">Отправить</button>
                                 </div>
                                 <div class="contact-after-button color-white">Нажимая на кнопку, я принимаю условия <br>
-                                    <a class="contact-after-button-link color-white" href="#">пользовательского соглашения сайта</a>
+                                    <a class="contact-after-button-link color-white" href="{% url 'in_developing_view' %}">пользовательского соглашения сайта</a>
                                 </div>
                             </div>
                         </form>

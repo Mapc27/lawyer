@@ -1,0 +1,23 @@
+{% extends "web/base.html" %}
+{% load static %}
+{% block title %}Evomark{% endblock %}
+
+{% block links %}
+	<link rel="stylesheet" href="{% static 'web/in_dev.css' %}">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+{% endblock %}
+
+{% block body %}
+    <div class="main">
+		<div class="container">
+			<h1 class="title-text">Эта страница находится в разработке</h1>
+			<div class="title-button">
+				<a class="title-button-link link" href="{% url 'main_view' %}">
+					Перейти на главную
+				</a>
+			</div>
+		</div>
+    </div>
+{% endblock %}

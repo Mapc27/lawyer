@@ -6,28 +6,80 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="format-detection" content="telephone=no">
     <title>{% block title %} {% endblock %}</title>
+	<link rel="apple-touch-icon" sizes="57x57" href="{% static 'web/icon/apple-icon-57x57.png' %}">
+	<link rel="apple-touch-icon" sizes="60x60" href="{% static 'web/icon/apple-icon-60x60.png' %}">
+	<link rel="apple-touch-icon" sizes="72x72" href="{% static 'web/icon/apple-icon-72x72.png' %}">
+	<link rel="apple-touch-icon" sizes="76x76" href="{% static 'web/icon/apple-icon-76x76.png' %}">
+	<link rel="apple-touch-icon" sizes="114x114" href="{% static 'web/icon/apple-icon-114x114.png' %}">
+	<link rel="apple-touch-icon" sizes="120x120" href="{% static 'web/icon/apple-icon-120x120.png' %}">
+	<link rel="apple-touch-icon" sizes="144x144" href="{% static 'web/icon/apple-icon-144x144.png' %}">
+	<link rel="apple-touch-icon" sizes="152x152" href="{% static 'web/icon/apple-icon-152x152.png' %}">
+	<link rel="apple-touch-icon" sizes="180x180" href="{% static 'web/icon/apple-icon-180x180.png' %}">
+	<link rel="icon" type="image/png" sizes="192x192"  href="{% static 'web/icon/android-icon-192x192.png' %}">
+	<link rel="icon" type="image/png" sizes="32x32" href="{% static 'web/icon/favicon-32x32.png' %}">
+	<link rel="icon" type="image/png" sizes="96x96" href="{% static 'web/icon/favicon-96x96.png' %}">
+	<link rel="icon" type="image/png" sizes="16x16" href="{% static 'web/icon/favicon-16x16.png' %}">
+	<link rel="manifest" href="{% static 'web/icon/manifest.json' %}">
+	<meta name="msapplication-TileColor" content="#ffffff">
+	<meta name="msapplication-TileImage" content="{% static 'web/icon/ms-icon-144x144.png' %}">
+	<meta name="theme-color" content="#ffffff">
+
+    <link rel="stylesheet" href="{% static 'web/header.css' %}">
+    <link rel="stylesheet" href="{% static 'web/base.css' %}">
     {% block links %} {% endblock %}
 </head>
 <body>
-<header class="header">
-    <div class="header-first-part">
-        <div class="logo">
-            <h1 class="logo-text">EVOMARK</h1>
-            <h2 class="logo-after-text">Защита интеллектуальной <br> собственности</h2>
-        </div>
-        <div class="nav-items">
-            <a class="nav-item-link link" href="#"><nav class="nav-item">УСЛУГИ</nav></a>
-            <a class="nav-item-link link" href="#"><nav class="nav-item">СТОИМОСТЬ</nav></a>
-            <a class="nav-item-link link" href="#"><nav class="nav-item">ПРОЕКТЫ</nav></a>
-            <a class="nav-item-link link" href="#"><nav class="nav-item">КОНТАКТЫ</nav></a>
-        </div>
-    </div>
-    <div class="contact-part">
-        <div class="contact-item"><a class="header-phone" href="tel:+79869235153">8 (986) 923 - 51 -53</a></div>
-        <div class="contact-item separator">|</div>
-        <div class="contact-item">evomark@inbox.ru</div>
-    </div>
+<header id="header" class="header">
+	<div class="inner-header">
+
+	    <div class="logo">
+	        <a class="logo-text" href="{% url 'main_view' %}">
+		        <h1 id="logoText" class="logo-text">EVOMARK</h1>
+	        </a>
+		    <h2 id="afterLogo" class="logo-after-text">Защита интеллектуальной <br> собственности</h2>
+	    </div>
+
+	    <div class="nav-items">
+	        <a class="nav-item-link link" href="{% url 'in_developing_view' %}"><nav class="nav-item">УСЛУГИ</nav></a>
+	        <a class="nav-item-link link" href="{% url 'in_developing_view' %}"><nav class="nav-item">СТОИМОСТЬ</nav></a>
+	        <a class="nav-item-link link" href="{% url 'in_developing_view' %}"><nav class="nav-item">ПРОЕКТЫ</nav></a>
+	        <a class="nav-item-link link" href="{% url 'in_developing_view' %}"><nav class="nav-item">КОНТАКТЫ</nav></a>
+	    </div>
+		<div class="contact-part">
+		    <div class="contact-item">
+		        <a class="header-phone" href="tel:+79869235153">8 (986) 923 - 51 -53</a>
+	        </div>
+		    <div class="contact-item separator">|</div>
+		    <div id="contactEmail" class="contact-item">
+		        <a href="mailto:evomark@inbox.ru" target="_self">evomark@inbox.ru</a>
+	        </div>
+	    </div>
+		<div class="mobile-nav-button-div">
+			<button id="navButton" class="mobile-nav-button" type="button">
+				<div class="mobile-nav-button-line"></div>
+				<div class="mobile-nav-button-line"></div>
+				<div class="mobile-nav-button-line"></div>
+			</button>
+		</div>
+	</div>
 </header>
+<div id="mobileMenu" class="mobile-menu">
+	<ul class="mobile-menu-nav-items">
+		<li class="mobile-menu-nav-item">
+			<a class="mobile-menu-link link" href="{% url 'in_developing_view' %}">Услуги</a>
+		</li>
+		<li class="mobile-menu-nav-item">
+			<a class="mobile-menu-link link" href="{% url 'in_developing_view' %}">Стоимость</a>
+		</li>
+		<li class="mobile-menu-nav-item">
+			<a class="mobile-menu-link link" href="{% url 'in_developing_view' %}">Проекты</a>
+		</li>
+		<li class="mobile-menu-nav-item">
+			<a class="mobile-menu-link link" href="{% url 'in_developing_view' %}">Контакты</a>
+		</li>
+	</ul>
+</div>
 {% block body %} {% endblock %}
+<script src="{% static 'web/base.js' %}"></script>
 </body>
 </html>

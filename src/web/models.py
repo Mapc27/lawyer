@@ -39,7 +39,7 @@ class User(BaseModel, AbstractBaseUser, PermissionsMixin):
         verbose_name_plural = "Пользователи"
 
     def __str__(self):
-        return f"Пользователь [Email: {self.email}, Telegram: {self.telegram_user_id}]"
+        return f"Пользователь №{self.id} [{self.email} {self.telegram_user_id}]"
 
 
 class Application(BaseModel):
@@ -58,7 +58,7 @@ class Application(BaseModel):
         verbose_name_plural = 'Заявки'
 
     def __str__(self):
-        return f"Заявка [Имя: {self.person_name}, Телефон:{self.phone_number}]"
+        return f"Заявка №{self.id} [{self.person_name}, {self.phone_number}]"
 
 
 class SolvedApplication(BaseModel):

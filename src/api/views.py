@@ -1,15 +1,15 @@
 from api.services import send_email
-from rest_framework import mixins, permissions, status
+from rest_framework import mixins, status
 from rest_framework.parsers import MultiPartParser
 from rest_framework.response import Response
 from rest_framework.viewsets import GenericViewSet
-from web.models import Application, SolvedApplication, User
+from web.models import Application
 
 from .permissions import CustomAuthPermission
-from .serializers import ApplicationSerializer, SolvedApplicationViewSerializer
+from .serializers import ApplicationSerializer
 
 
-class ApplicationsView(mixins.ListModelMixin, mixins.CreateModelMixin, mixins.RetrieveModelMixin, GenericViewSet):
+class ApplicationsView(mixins.CreateModelMixin, GenericViewSet):
     queryset = Application.objects.all()
     permission_classes = [CustomAuthPermission]
     parser_classes = [MultiPartParser]
@@ -24,14 +24,7 @@ class ApplicationsView(mixins.ListModelMixin, mixins.CreateModelMixin, mixins.Re
         serializer.is_valid(raise_exception=True)
         obj = serializer.save()
 
-        users = User.objects.filter(is_staff=True)
-        send_email(users, obj)
+        send_email(obj, request)
 
         headers = self.get_success_headers(serializer.data)
         return Response(serializer.data, status=status.HTTP_201_CREATED, headers=headers)
-
-
-class SolvedApplicationsView(mixins.ListModelMixin, GenericViewSet):
-    queryset = SolvedApplication.objects.all()
-    serializer_class = SolvedApplicationViewSerializer
-    permission_classes = [permissions.AllowAny]
