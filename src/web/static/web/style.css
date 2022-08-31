@@ -1,8 +1,3 @@
-.header-phone{
-    color: #000000;
-    text-decoration: none;
-}
-
 .contact-form-phone{
     color: #ffffff;
     text-decoration: none;
@@ -11,6 +6,10 @@
 
 .main{
     padding-top: 200px;
+    background-image: url("main.jpg");
+    background-size: auto;
+    background-position: top center;
+    background-repeat: no-repeat;
 }
 
 .container{
@@ -29,6 +28,7 @@
 .first-page-first-element{
     width: 67%;
     margin: 0 2% 0 0;
+    color: #ffffff;
 }
 
 
@@ -666,6 +666,7 @@
 
     .title-description{
         font-size: 18px;
+        line-height: normal;
     }
 
     .title-button-link{
@@ -724,6 +725,7 @@
 @media (max-width: 990px) {
     .main{
         padding-top: 100px;
+        margin-top: 80px;
     }
 
     .first-page-first-element{
@@ -783,7 +785,6 @@
     }
 
     .title{
-        text-align: center;
         margin: 0;
     }
 
@@ -857,7 +858,7 @@
 
 @media (max-width: 770px){
     .second-page{
-        margin: 100px auto 0 auto;
+        margin: 70px auto 0 auto;
     }
 
     .services{

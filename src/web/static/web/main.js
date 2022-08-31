@@ -1,6 +1,6 @@
 $(document).ready(function(){
     $('.solved-tasks').slick({
-        dots: true,
+        // dots: true,
         focusOnSelect: true
     })
 });

@@ -28,7 +28,7 @@ function myFunction() {
   if (window.pageYOffset > 10) {
     let clientWidth = document.body.clientWidth;
     if(clientWidth >= 991){
-	    header.classList.add("h-80");
+	    header.classList.add("header-scroll");
 	    if (clientWidth <= 1250) {
 		    afterLogo.classList.add("hide");
 	    }
@@ -37,7 +37,7 @@ function myFunction() {
   else {
   	let clientWidth = document.body.clientWidth;
   	if(clientWidth >= 991){
-	    header.classList.remove("h-80");
+	    header.classList.remove("header-scroll");
 	    if (clientWidth <= 1250) {
 		    afterLogo.classList.remove("hide");
 	    }
